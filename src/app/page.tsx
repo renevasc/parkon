@@ -416,9 +416,9 @@ export default function Home() {
           <div className="footer-content">
             <p className="text-sm text-gray-600">© 2025 - PARK ON</p>
             <div className="footer-links">
-              <a href="#" className="text-sm text-gray-600 hover:text-primary transition-colors">Privacidade</a>
-              <a href="#" className="text-sm text-gray-600 hover:text-primary transition-colors">Termos</a>
-              <a href="#" className="text-sm text-gray-600 hover:text-primary transition-colors">Ajuda</a>
+              <a href="/privacidade" className="text-sm text-gray-600 hover:text-primary transition-colors">Privacidade</a>
+              <a href="/termos" className="text-sm text-gray-600 hover:text-primary transition-colors">Termos</a>
+              <a href="/ajuda" className="text-sm text-gray-600 hover:text-primary transition-colors">Ajuda</a>
             </div>
           </div>
         </div>
