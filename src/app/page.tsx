@@ -39,11 +39,11 @@ export default function Home() {
     setFormData(prev => ({ ...prev, [name]: value }));
   }, []);
 
-  // Validação por seção
+  // Validação por seção (name e register são opcionais)
   const getSectionFields = useCallback((section: number): (keyof FormData)[] => {
     switch (section) {
       case 0:
-        return ['name', 'register'];
+        return []; // Seção 0 não tem campos obrigatórios (name e register são opcionais)
       case 1:
         return ['tempodedoenca', 'testesobrecarga', 'dosesdiarias'];
       case 2:
@@ -140,7 +140,7 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="form-group">
           <label htmlFor="name" className="block mb-2 font-medium">
-            Nome <span className="text-red-500">*</span>
+            Nome <span className="text-gray-400 text-sm">(opcional)</span>
           </label>
           <input
             type="text"
@@ -149,15 +149,13 @@ export default function Home() {
             value={formData.name}
             onChange={handleChange}
             className="input"
-            required
-            aria-required="true"
-            aria-label="Nome do paciente"
-            placeholder="Digite o nome completo"
+            aria-label="Nome do paciente (opcional)"
+            placeholder="Iniciais ou nome do paciente"
           />
         </div>
         <div className="form-group">
           <label htmlFor="register" className="block mb-2 font-medium">
-            Registro <span className="text-red-500">*</span>
+            Registro <span className="text-gray-400 text-sm">(opcional)</span>
           </label>
           <input
             type="text"
@@ -166,10 +164,8 @@ export default function Home() {
             value={formData.register}
             onChange={handleChange}
             className="input"
-            required
-            aria-required="true"
-            aria-label="Número de registro do paciente"
-            placeholder="Digite o número de registro"
+            aria-label="Número de registro do paciente (opcional)"
+            placeholder="Código ou número de registro"
           />
         </div>
       </div>

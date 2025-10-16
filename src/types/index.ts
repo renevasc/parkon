@@ -16,8 +16,8 @@ export enum DosesLevodopa {
 
 // Interface do formulário
 export interface FormData {
-  name: string;
-  register: string;
+  name?: string; // Opcional - pode ser deixado em branco
+  register?: string; // Opcional - pode ser deixado em branco
   tempodedoenca: string;
   testesobrecarga: string;
   dosesdiarias: string;
@@ -75,10 +75,8 @@ export interface ToastMessage {
   duration?: number;
 }
 
-// Campos obrigatórios do formulário
+// Campos obrigatórios do formulário (name e register são opcionais)
 export const REQUIRED_FIELDS: (keyof FormData)[] = [
-  'name',
-  'register',
   'tempodedoenca',
   'testesobrecarga',
   'dosesdiarias',
